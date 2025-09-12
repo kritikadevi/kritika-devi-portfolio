@@ -51,7 +51,7 @@ const Navigation = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-card-border">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-background/95 backdrop-blur-xl border-b border-card-border shadow-lg">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -93,9 +93,9 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          <div className="fixed inset-0 bg-background/80 backdrop-blur-lg" onClick={() => setIsOpen(false)} />
-          <div className="fixed top-16 left-0 right-0 bg-background border-b border-card-border">
+        <div className="fixed inset-0 z-[90] md:hidden">
+          <div className="fixed inset-0 bg-background/90 backdrop-blur-lg" onClick={() => setIsOpen(false)} />
+          <div className="fixed top-16 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-card-border shadow-lg">
             <div className="container mx-auto px-6 py-4">
               <div className="space-y-4">
                 {navItems.map((item) => (
@@ -119,7 +119,7 @@ const Navigation = () => {
       )}
 
       {/* Floating Navigation Dots (Desktop) */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-[80] hidden lg:block">
         <div className="space-y-4">
           {navItems.map((item) => (
             <button
