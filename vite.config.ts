@@ -18,6 +18,9 @@ export default defineConfig(({ mode }: { mode: string }) => ({
     //   cert: fs.readFileSync("./ssl/cert.pem"),
     // },
   },
+  preview: {
+    allowedHosts: ["kritika-devi-portfolio.onrender.com"],
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
