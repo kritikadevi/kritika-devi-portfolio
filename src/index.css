@@ -1,42 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Portfolio Design System for Kritika Devi */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark Professional Theme */
+    --background: 220 15% 8%;
+    --background-secondary: 220 15% 10%;
+    --background-tertiary: 220 15% 12%;
+    --foreground: 220 5% 95%;
+    --foreground-secondary: 220 5% 80%;
+    --foreground-muted: 220 5% 60%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Navy & Teal Palette */
+    --brand-primary: 210 100% 50%;
+    --brand-secondary: 180 100% 40%;
+    --brand-accent: 195 100% 45%;
+    --brand-gradient: linear-gradient(135deg, hsl(210 100% 50%), hsl(180 100% 40%));
+    --brand-gradient-subtle: linear-gradient(135deg, hsl(210 100% 50% / 0.1), hsl(180 100% 40% / 0.05));
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Professional Card System */
+    --card: 220 15% 12%;
+    --card-hover: 220 15% 15%;
+    --card-foreground: 220 5% 95%;
+    --card-border: 220 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Interactive Elements */
+    --primary: 210 100% 50%;
+    --primary-foreground: 220 5% 95%;
+    --primary-hover: 210 100% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 5% 95%;
+    --secondary-hover: 220 15% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 180 100% 40%;
+    --accent-foreground: 220 5% 95%;
+    --accent-hover: 180 100% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Success & Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 220 5% 95%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 15% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 5% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Form Elements */
+    --input: 220 15% 15%;
+    --input-border: 220 15% 25%;
+    --input-focus: 210 100% 50%;
+    --ring: 210 100% 50%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Dividers */
+    --border: 220 15% 20%;
+    --border-subtle: 220 15% 18%;
 
-    --radius: 0.5rem;
+    /* Shadows & Effects */
+    --shadow-sm: 0 2px 4px hsl(220 15% 5% / 0.1);
+    --shadow-md: 0 4px 12px hsl(220 15% 5% / 0.15);
+    --shadow-lg: 0 8px 25px hsl(220 15% 5% / 0.25);
+    --shadow-brand: 0 8px 25px hsl(210 100% 50% / 0.15);
+    --shadow-accent: 0 8px 25px hsl(180 100% 40% / 0.15);
+
+    /* Animation Timings */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +138,118 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-card-border;
+    box-shadow: var(--shadow-md);
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:bg-card-hover transition-colors duration-300;
+  }
+
+  /* Brand Gradient Text */
+  .gradient-text {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Brand Gradient Background */
+  .gradient-bg {
+    background: var(--brand-gradient);
+  }
+
+  .gradient-bg-subtle {
+    background: var(--brand-gradient-subtle);
+  }
+
+  /* Skill Progress Bar */
+  .skill-bar {
+    @apply h-2 bg-background-secondary rounded-full overflow-hidden relative;
+  }
+
+  .skill-progress {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+    background: var(--brand-gradient);
+    box-shadow: var(--shadow-brand);
+  }
+
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Pulse Glow Effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from { box-shadow: var(--shadow-brand); }
+    to { box-shadow: var(--shadow-accent); }
+  }
+
+  /* Hover Lift Effect */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Professional Button Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-hover;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    box-shadow: var(--shadow-brand);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary-hover;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent-hover;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    box-shadow: var(--shadow-accent);
+  }
+
+  /* Typing Animation */
+  .typing-animation {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--brand-primary));
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--brand-primary)); }
   }
 }
