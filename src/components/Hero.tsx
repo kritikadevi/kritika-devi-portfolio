@@ -77,10 +77,9 @@ const Hero = () => {
                 </div>
 
                 <p className="text-foreground-secondary text-xl leading-relaxed max-w-2xl">
-                  B.Tech Computer Science student at{" "}
+                  B.Tech Information Technology student at{" "}
                   <span className="text-brand-primary font-semibold">NIT Srinagar</span>{" "}
-                  with expertise in building scalable, user-focused applications. 
-                  Passionate about creating impactful digital solutions.
+                  With hands-on expertise in building scalable, user-focused applications, and a strong passion for developing innovative digital solutions that create real-world impact.
                 </p>
               </div>
             </div>

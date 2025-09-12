@@ -23,16 +23,16 @@ const About = () => {
               
               <div className="space-y-4 text-foreground-secondary leading-relaxed">
                 <p>
-                  I'm a dedicated Full Stack Developer with expertise in Java, React, Node.js, and REST APIs. 
-                  Currently pursuing B.Tech in Computer Science at NIT Srinagar, I combine academic excellence 
-                  with hands-on development experience.
+              Motivated Information Technology undergraduate at NIT Srinagar with strong foundations in Data Structures & Algorithms and 
+              practical experience in Full Stack Development. Skilled in Java, React, Node.js, and RESTful APIs, with a proven ability to design and build scalable, user-focused applications. 
+              Passionate about problem-solving, innovation, and continuous learning, with a strong drive to grow as a Software Engineer.
                 </p>
                 
-                <p>
+                {/* <p>
                   My journey in software development is driven by a passion for problem-solving and creating 
                   impactful digital solutions. I specialize in building scalable, user-focused applications 
                   with a strong foundation in Data Structures & Algorithms.
-                </p>
+                </p> */}
 
                 <p>
                   Beyond coding, I'm deeply interested in emerging technologies and constantly learning 
@@ -73,7 +73,7 @@ const About = () => {
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-foreground text-lg">
-                          B.Tech in Computer Science
+                          B.Tech in Information Technology
                         </h4>
                         <p className="text-brand-primary font-medium mb-2">
                           National Institute of Technology, Srinagar
@@ -89,8 +89,9 @@ const About = () => {
                           </div>
                         </div>
                         <p className="text-foreground-secondary text-sm">
-                          Pursuing comprehensive education in Computer Science with focus on 
-                          software engineering, algorithms, and modern development practices.
+     Information Technology undergraduate at NIT Srinagar with a strong foundation in
+      Data Structures & Algorithms and Full Stack Development, passionate 
+     about solving complex problems and creating scalable digital solutions.
                         </p>
                       </div>
                     </div>
@@ -110,17 +111,16 @@ const About = () => {
                           Higher Secondary Education
                         </h4>
                         <p className="text-brand-secondary font-medium mb-2">
-                          Army Public School, Jammu
+                          Army Public School, Janglot Jammu & Kashmir
                         </p>
                         <div className="flex flex-wrap gap-4 text-sm text-foreground-secondary mb-3">
                           <div className="flex items-center gap-1">
                             <Award className="w-4 h-4" />
-                            93% Score
+                            93.4% Score
                           </div>
                         </div>
                         <p className="text-foreground-secondary text-sm">
-                          Completed with distinction, building strong foundation in 
-                          mathematics and sciences.
+                       Completed Higher Secondary Education (Non-Medical) with distinction, developing a strong foundation in Mathematics and Sciences.
                         </p>
                       </div>
                     </div>
