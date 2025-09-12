@@ -128,6 +128,8 @@ export default {
         "scale-in": "scale-in 0.2s ease-out",
         "typing": "typing 3.5s steps(40, end)",
         "blink-caret": "blink-caret 0.75s step-end infinite",
+        "bounce-slow": "bounce 2s infinite",
+        "pulse-slow": "pulse 3s ease-in-out infinite",
       },
     },
   },
