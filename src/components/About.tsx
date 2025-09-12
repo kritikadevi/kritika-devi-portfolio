@@ -2,7 +2,7 @@ import { GraduationCap, MapPin, Calendar, Award } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative scroll-mt-24">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}

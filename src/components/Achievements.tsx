@@ -39,7 +39,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-20 relative">
+    <section id="achievements" className="py-20 relative scroll-mt-24">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-0 w-72 h-72 gradient-bg-subtle rounded-full blur-3xl opacity-10"></div>

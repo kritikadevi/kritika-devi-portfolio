@@ -40,10 +40,12 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const NAV_HEIGHT = 80;
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.substring(1));
+    const element = document.getElementById(sectionId.replace('#',''));
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const y = element.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
     setIsOpen(false);
   };

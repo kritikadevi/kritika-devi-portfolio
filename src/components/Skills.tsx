@@ -48,7 +48,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-20 relative scroll-mt-24">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-10 w-64 h-64 gradient-bg-subtle rounded-full blur-3xl opacity-10"></div>
