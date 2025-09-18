@@ -2,6 +2,27 @@ import { ArrowDownRight, Download, Mail, Github, Linkedin, Sparkles, Code, Coffe
 import { Button } from "@/components/ui/button";
 import kritikaProfile from "@/assets/kritika-profile.jpg";
 
+const heroSocials = [
+  {
+    label: 'GitHub',
+    icon: Github,
+    href: 'https://github.com/kritikadevi',
+    hoverColor: 'group-hover:text-brand-primary',
+  },
+  {
+    label: 'LinkedIn',
+    icon: Linkedin,
+    href: 'https://linkedin.com/in/kritika-devi-873439319',
+    hoverColor: 'group-hover:text-brand-secondary',
+  },
+  {
+    label: 'Email',
+    icon: Mail,
+    href: 'mailto:kritikadevi012@gmail.com',
+    hoverColor: 'group-hover:text-brand-accent',
+  },
+];
+
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -101,7 +122,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 className="group glass-card border-2 border-foreground-secondary/20 hover:border-brand-primary/50 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-brand-primary/5 transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://drive.google.com/file/d/13xTuD1A0QV6WHKamAk9TjWhHEfRqotnc/view?usp=drivesdk ', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/13xTuD1A0QV6WHKamAk9TjWhHEfRqotnc/view?usp=drivesdk', '_blank')}
               >
                 <div className="flex items-center gap-3">
                   <Download className="w-5 h-5 group-hover:animate-bounce" />
@@ -112,30 +133,18 @@ const Hero = () => {
 
             {/* Enhanced Social Links */}
             <div className="flex gap-4 pt-6">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="w-14 h-14 glass-card hover:glass-card-hover rounded-2xl group transition-all duration-300 hover:scale-110"
-                onClick={() => window.open('https://github.com/kritikadevi', '_blank')}
-              >
-                <Github className="w-6 h-6 group-hover:text-brand-primary transition-colors" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="w-14 h-14 glass-card hover:glass-card-hover rounded-2xl group transition-all duration-300 hover:scale-110"
-                onClick={() => window.open('https://linkedin.com/in/kritika-devi-873439319', '_blank')}
-              >
-                <Linkedin className="w-6 h-6 group-hover:text-brand-secondary transition-colors" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="w-14 h-14 glass-card hover:glass-card-hover rounded-2xl group transition-all duration-300 hover:scale-110"
-                onClick={() => window.open('mailto:kritikadevi012@gmail.com', '_blank')}
-              >
-                <Mail className="w-6 h-6 group-hover:text-brand-accent transition-colors" />
-              </Button>
+              {heroSocials.map((social) => (
+                <Button
+                  key={social.label}
+                  variant="ghost"
+                  size="icon"
+                  className="w-14 h-14 glass-card hover:glass-card-hover rounded-2xl group transition-all duration-300 hover:scale-110"
+                  onClick={() => window.open(social.href, '_blank')}
+                  aria-label={social.label}
+                >
+                  <social.icon className={`w-6 h-6 ${social.hoverColor} transition-colors`} />
+                </Button>
+              ))}
             </div>
           </div>
 

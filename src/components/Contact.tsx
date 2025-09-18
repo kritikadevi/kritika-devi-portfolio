@@ -6,6 +6,51 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
+const contactInfo = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "kritikadevi012@gmail.com",
+    href: "mailto:kritikadevi012@gmail.com",
+    color: "text-brand-primary"
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 9541260886",
+    href: "tel:+919541260886",
+    color: "text-brand-secondary"
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Srinagar, Jammu & Kashmir",
+    href: "#",
+    color: "text-brand-accent"
+  }
+];
+
+const socialLinks = [
+  {
+    icon: Github,
+    label: "GitHub",
+    href: "https://github.com/kritikadevi",
+    color: "text-foreground-secondary hover:text-brand-primary"
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/kritika-devi-873439319",
+    color: "text-foreground-secondary hover:text-brand-secondary"
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:kritikadevi012@gmail.com",
+    color: "text-foreground-secondary hover:text-brand-accent"
+  }
+];
+
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -27,16 +72,31 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS environment variables are missing. Please check your .env file.");
+      toast({
+        variant: "destructive",
+        title: "Configuration Error",
+        description: "The email service is not configured correctly. Please contact the site administrator.",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     if (!form.current) {
       setIsSubmitting(false);
       return;
     }
 
     emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      serviceId,
+      templateId,
       form.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      publicKey
     )
       .then((result) => {
         console.log('SUCCESS!', result.text);
@@ -57,51 +117,6 @@ const Contact = () => {
         setIsSubmitting(false);
       });
   };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "kritikadevi012@gmail.com",
-      href: "mailto:kritikadevi012@gmail.com",
-      color: "text-brand-primary"
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+91 9541260886",
-      href: "tel:+919541260886",
-      color: "text-brand-secondary"
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Srinagar, Jammu & Kashmir",
-      href: "#",
-      color: "text-brand-accent"
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/kritikadevi",
-      color: "text-foreground-secondary hover:text-brand-primary"
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://linkedin.com/in/kritika-devi-873439319",
-      color: "text-foreground-secondary hover:text-brand-secondary"
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      href: "mailto:kritikadevi012@gmail.com",
-      color: "text-foreground-secondary hover:text-brand-accent"
-    }
-  ];
 
   return (
     <section id="contact" className="py-20 relative scroll-mt-24">
