@@ -77,9 +77,9 @@ const Hero = () => {
                 </div>
 
                 <p className="text-foreground-secondary text-xl leading-relaxed max-w-2xl">
-                  B.Tech Information Technology student at{" "}
+                 An Information Technology student at{" "}
                   <span className="text-brand-primary font-semibold">NIT Srinagar</span>{" "}
-                  With hands-on expertise in building scalable, user-focused applications, and a strong passion for developing innovative digital solutions that create real-world impact.
+ specializing in full-stack development. I build robust and user-centric web applications, turning complex problems into elegant digital solutions.
                 </p>
               </div>
             </div>
@@ -101,7 +101,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 className="group glass-card border-2 border-foreground-secondary/20 hover:border-brand-primary/50 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-brand-primary/5 transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/13xTuD1A0QV6WHKamAk9TjWhHEfRqotnc/view?usp=drivesdk ', '_blank')}
               >
                 <div className="flex items-center gap-3">
                   <Download className="w-5 h-5 group-hover:animate-bounce" />
