@@ -10,8 +10,8 @@ const Projects = () => {
       icon: Database,
       color: "text-brand-primary",
       bgGradient: "from-brand-primary/20 to-brand-primary/5",
-      github: "https://github.com/kritikadevi",
-      demo: "#",
+      github: "https://github.com/kritikadevi/your-nest-quest-repo", // <-- Replace with your repo link
+      demo: "https://your-nest-quest-demo.com", // <-- Replace with your live demo link, or keep as "#"
       features: ["User Authentication", "Property Management", "Booking System", "Payment Gateway"]
     },
     {
@@ -21,8 +21,8 @@ const Projects = () => {
       icon: Gamepad2,
       color: "text-brand-secondary",
       bgGradient: "from-brand-secondary/20 to-brand-secondary/5",
-      github: "https://github.com/kritikadevi",
-      demo: "#",
+      github: "https://github.com/kritikadevi/your-tic-tac-toe-repo", // <-- Replace
+      demo: "#", // <-- No live demo for this one
       features: ["Two Player Mode", "Score Tracking", "Responsive Design", "Smooth Animations"]
     },
     {
@@ -32,8 +32,8 @@ const Projects = () => {
       icon: Globe,
       color: "text-brand-accent",
       bgGradient: "from-brand-accent/20 to-brand-accent/5",
-      github: "https://github.com/kritikadevi",
-      demo: "#",
+      github: "https://github.com/kritikadevi/your-stone-paper-scissors-repo", // <-- Replace
+      demo: "#", // <-- No live demo for this one
       features: ["AI Opponent", "Score System", "Game Statistics", "Visual Effects"]
     },
     {
@@ -43,8 +43,8 @@ const Projects = () => {
       icon: Database,
       color: "text-warning",
       bgGradient: "from-warning/20 to-warning/5",
-      github: "https://github.com/kritikadevi",
-      demo: "#",
+      github: "https://github.com/kritikadevi/your-mess-management-repo", // <-- Replace
+      demo: "#", // <-- No live demo for this one
       features: ["Inventory Management", "Meal Planning", "Billing System", "User Management"]
     }
   ];
@@ -102,6 +102,7 @@ const Projects = () => {
                       size="icon"
                       className="w-10 h-10 glass-card-hover"
                       onClick={() => window.open(project.demo, '_blank')}
+                      disabled={project.demo === '#'}
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
@@ -147,6 +148,7 @@ const Projects = () => {
                   <Button 
                     className="btn-primary flex-1"
                     onClick={() => window.open(project.demo, '_blank')}
+                    disabled={project.demo === '#'}
                   >
                     <Play className="w-4 h-4 mr-2" />
                     Live Demo
