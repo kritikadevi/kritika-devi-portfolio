@@ -210,13 +210,8 @@ const Contact = () => {
                 </h3>
               </div>
 
-<<<<<<< HEAD
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
-=======
-              <form onSubmit={handleSubmit} className="space-y-4 xs:space-y-6">
-                <div className="grid gap-4 md:grid-cols-2">
->>>>>>> f10318c13db4799a9ecf9ff97e4b03c6cfc01d6a
                   <div className="space-y-2">
                     <label className="text-xs xs:text-sm font-medium text-foreground-secondary">
                       Your Name
