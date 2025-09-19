@@ -125,7 +125,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 className="group glass-card border-2 border-foreground-secondary/20 hover:border-brand-primary/50 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-brand-primary/5 transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('file:///C:/Users/Kritika/Downloads/KritikaDevi_Resume_FullStack1.pdf', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1AZhqBCzkIDpEPG-IQtaL6KScuJ0QPOND/view?usp=drivesdk ', '_blank')}
               >
                 <div className="flex items-center gap-2 xs:gap-3 justify-center">
                   <Download className="w-4 h-4 xs:w-5 xs:h-5 group-hover:animate-bounce" />
